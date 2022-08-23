@@ -1,0 +1,23 @@
+---
+apiVersion: v2
+appVersion: latest
+description: A simple NFS server
+name: nfs-server
+version: 0.1.0
+kubeVersion: ">=1.16.0-0"
+keywords: []
+home: https://github.com/brettinternet/charts/tree/master/charts/nfs-server
+icon: URL
+sources:
+  - https://github.com/brettinternet/charts/tree/master/charts/nfs-server
+  - https://hub.docker.com/r/erichough/nfs-server/
+maintainers:
+  - name: brett
+dependencies:
+  - name: common
+    version: 0.1.0
+    repository: https://bjw-s.github.io/helm-charts/
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Initial version
