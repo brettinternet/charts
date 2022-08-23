@@ -1,0 +1,25 @@
+---
+version: "3"
+
+vars:
+  PROJECT_DIR:
+    sh: git rev-parse --show-toplevel
+  CHARTS_DIR: "{{.PROJECT_DIR}}/charts"
+
+includes:
+  charts: .taskfiles/charts.yaml
+  precommit: .taskfiles/precommit.yaml
+  setup: .taskfiles/setup_{{OS}}.yaml
+
+tasks:
+  default:
+    silent: true
+    cmds:
+      - task -l
+
+  init:
+    desc: Install dependencies and setup environment
+    cmds:
+      - task: setup:init
+      - task: precommit:init
+      - task: precommit:update
