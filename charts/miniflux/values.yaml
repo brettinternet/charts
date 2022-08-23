@@ -1,0 +1,40 @@
+# Extends https://github.com/bjw-s/helm-charts/blob/13c511dc13e1f31c1ccfd81f67aafd369c86e1a0/charts/library/common/values.yaml
+---
+image:
+  repository: miniflux/miniflux
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env:
+  TZ: UTC
+    # See https://pkg.go.dev/github.com/lib/pq#hdr-Connection_String_Parameters
+  DATABASE_URL: postgres://user:password@podname.namespace/miniflux?sslmode=disable
+  RUN_MIGRATIONS: "1"
+  CREATE_ADMIN: "1"
+  # When `CREATE_ADMIN` is enabled.
+  ADMIN_USERNAME: admin
+  # When `CREATE_ADMIN` is enabled
+  ADMIN_PASSWORD: ""
+
+service:
+  main:
+    ports:
+      http:
+        port: 8080
+
+probes:
+  liveness:
+    enabled: true
+    custom: true
+    spec:
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 1
+      failureThreshold: 3
+      httpGet:
+        path: /healthcheck
+        port: 8080
+
+ingress:
+  main:
+    enabled: false

@@ -89,12 +89,21 @@ service:
         targetPort: 32414
     externalTrafficPolicy: Local
 
-ingress:
-  main:
-    enabled: false
-
 # Enable devices to be discoverable
 hostNetwork: false
+
+probes:
+  liveness:
+    enabled: true
+    custom: true
+    spec:
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 1
+      failureThreshold: 3
+      httpGet:
+        path: /identity
+        port: 32400
 
 persistence:
   config:
@@ -131,3 +140,7 @@ resources: {}
   #   # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
   #   gpu.intel.com/i915: 1
   #   memory: 4096Mi
+
+ingress:
+  main:
+    enabled: false

@@ -1,15 +1,15 @@
 ---
 apiVersion: v2
 appVersion: latest
-description: A simple NFS server
-name: nfs-server
+description: Miniflux RSS reader
+name: miniflux
 version: 0.1.0
 kubeVersion: ">=1.16.0-0"
 keywords: []
-home: https://github.com/brettinternet/charts/tree/master/charts/nfs-server
+home: https://github.com/brettinternet/charts/tree/master/charts/miniflux
 sources:
-  - https://github.com/brettinternet/charts/tree/master/charts/nfs-server
-  - https://hub.docker.com/r/erichough/nfs-server/
+  - https://github.com/brettinternet/charts/tree/master/charts/miniflux
+  - https://hub.docker.com/r/miniflux/miniflux
 maintainers:
   - name: brett
 dependencies:
