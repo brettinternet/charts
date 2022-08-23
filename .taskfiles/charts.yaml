@@ -1,0 +1,21 @@
+---
+version: "3"
+
+tasks:
+  create:
+    desc: Create boilerplate for a new helm chart; e.g. task charts:create -- new-chart
+    cmds:
+      # - helm create {{.CHARTS_DIR}}/{{.CLI_ARGS}}
+      - cp -R template {{.CHARTS_DIR}}/{{.CLI_ARGS}}/
+
+  lint:
+    desc: chart-testing lint all charts
+    cmds:
+      - docker run --rm -it --workdir=/data --volume $(pwd):/data {{.CT_IMAGE}} ct lint
+    vars:
+      CT_IMAGE: quay.io/helmpack/chart-testing:v3.6.0
+    env:
+      CT_CHART_DIRS: charts
+    preconditions:
+      - sh: command -v docker
+        msg: Docker is not installed
