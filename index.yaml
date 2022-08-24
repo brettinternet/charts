@@ -26,4 +26,31 @@ entries:
     urls:
     - https://github.com/brettinternet/charts/releases/download/adguard-0.1.0/adguard-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-23T19:40:17.82139474Z"
+  babybuddy:
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
+          description: Initial version
+    apiVersion: v2
+    appVersion: latest
+    created: "2022-08-24T00:38:08.150924171Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 0.1.0
+    description: Babybuddy
+    digest: c329185cdc13e34d56534931127fd307169f2d905821da4f995c9fc01cda56c2
+    home: https://github.com/brettinternet/charts/tree/master/charts/babybuddy
+    icon: https://raw.githubusercontent.com/babybuddy/babybuddy/master/babybuddy/static_src/logo/icon.png
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: brett
+    name: babybuddy
+    sources:
+    - https://github.com/brettinternet/charts/tree/master/charts/babybuddy
+    - https://hub.docker.com/r/linuxserver/babybuddy
+    - https://github.com/babybuddy/babybuddy
+    urls:
+    - https://github.com/brettinternet/charts/releases/download/babybuddy-0.1.0/babybuddy-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-08-24T00:38:08.150932771Z"
