@@ -1,0 +1,24 @@
+---
+apiVersion: v2
+appVersion: latest
+description: Dokuwiki
+name: dokuwiki
+version: 0.1.0
+kubeVersion: ">=1.16.0-0"
+keywords: []
+home: https://github.com/brettinternet/charts/tree/master/charts/dokuwiki
+icon: https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png
+sources:
+  - https://github.com/brettinternet/charts/tree/master/charts/dokuwiki
+  - https://github.com/splitbrain/dokuwiki
+  - https://github.com/linuxserver/docker-dokuwiki
+maintainers:
+  - name: brett
+dependencies:
+  - name: common
+    version: 0.1.0
+    repository: https://bjw-s.github.io/helm-charts/
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Initial version
