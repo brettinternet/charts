@@ -1,0 +1,22 @@
+---
+apiVersion: v2
+appVersion: 1.20.10
+description: Enables k8s containers to access devices (linux device drivers) available on nodes
+name: smarter-device-manager
+version: 0.1.0
+kubeVersion: ">=1.16.0-0"
+keywords: []
+home: https://github.com/brettinternet/charts/tree/master/charts/smarter-device-manager
+sources:
+  - https://github.com/brettinternet/charts/tree/master/charts/smarter-device-manager
+  - https://gitlab.com/arm-research/smarter/smarter-device-manager/
+maintainers:
+  - name: brett
+dependencies:
+  - name: common
+    version: 0.1.0
+    repository: https://bjw-s.github.io/helm-charts/
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Initial version

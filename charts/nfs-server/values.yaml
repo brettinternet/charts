@@ -1,7 +1,7 @@
 # Extends https://github.com/bjw-s/helm-charts/blob/13c511dc13e1f31c1ccfd81f67aafd369c86e1a0/charts/library/common/values.yaml
 ---
 image:
-  repository: docker.io/_/postgres
+  repository: docker.io/erichough/nfs-server
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -32,6 +32,9 @@ persistence:
   data:
     enabled: false
     mountPath: /data
+    # See https://kubernetes.io/docs/concepts/storage/volumes/#hostpath
+    # type: hostPath
+    # hostPath:
 
 # This needs to be enabled...but we'll let you do it
 # https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
@@ -58,3 +61,15 @@ resources: {}
   #   # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
   #   gpu.intel.com/i915: 1
   #   memory: 4096Mi
+
+# Pod constraints for a specific node
+# See https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
+affinity: {}
+#   nodeAffinity:
+#     requiredDuringSchedulingIgnoredDuringExecution:
+#       nodeSelectorTerms:
+#        - matchExpressions:
+#          - key: devices
+#            operator: In
+#            values:
+#             - usb
