@@ -6,10 +6,10 @@ name: babybuddy
 version: 0.1.0
 kubeVersion: ">=1.16.0-0"
 keywords: []
-home: https://github.com/brettinternet/charts/tree/master/charts/babybuddy
+home: https://github.com/brettinternet/charts/tree/main/charts/babybuddy
 icon: https://raw.githubusercontent.com/babybuddy/babybuddy/master/babybuddy/static_src/logo/icon.png
 sources:
-  - https://github.com/brettinternet/charts/tree/master/charts/babybuddy
+  - https://github.com/brettinternet/charts/tree/main/charts/babybuddy
   - https://hub.docker.com/r/linuxserver/babybuddy
   - https://github.com/babybuddy/babybuddy
 maintainers:

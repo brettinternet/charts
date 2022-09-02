@@ -5,19 +5,13 @@ description: DESCRIPTION
 name: NAME
 version: 0.1.0
 kubeVersion: ">=1.16.0-0"
-keywords: []
-home: https://github.com/brettinternet/charts/tree/master/charts/NAME
+home: https://github.com/brettinternet/charts/tree/main/charts/NAME
 icon: URL
 sources:
-  - https://github.com/brettinternet/charts/tree/master/charts/NAME
-  - https://hub.docker.com/r/_/NAME
+  - https://github.com/brettinternet/charts/tree/main/charts/NAME
 maintainers:
   - name: brett
 dependencies:
   - name: common
     version: 0.1.0
     repository: https://bjw-s.github.io/helm-charts/
-annotations:
-  artifacthub.io/changes: |-
-    - kind: changed
-      description: Initial version

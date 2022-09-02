@@ -8,10 +8,10 @@ kubeVersion: ">=1.16.0-0"
 keywords:
   - plex
   - plex-media-server
-home: https://github.com/brettinternet/charts/tree/master/charts/plex
+home: https://github.com/brettinternet/charts/tree/main/charts/plex
 icon: https://www.plex.tv/wp-content/uploads/2018/01/pmp-icon-1.png
 sources:
-  - https://github.com/brettinternet/charts/tree/master/charts/plex
+  - https://github.com/brettinternet/charts/tree/main/charts/plex
   - https://hub.docker.com/r/plexinc/pms-docker
 maintainers:
   - name: brett

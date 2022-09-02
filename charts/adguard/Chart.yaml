@@ -6,10 +6,10 @@ name: adguard
 version: 0.1.0
 kubeVersion: ">=1.16.0-0"
 keywords: []
-home: https://github.com/brettinternet/charts/tree/master/charts/adguard
+home: https://github.com/brettinternet/charts/tree/main/charts/adguard
 icon: URL
 sources:
-  - https://github.com/brettinternet/charts/tree/master/charts/adguard
+  - https://github.com/brettinternet/charts/tree/main/charts/adguard
   - https://hub.docker.com/r/adguard/adguardhome
 maintainers:
   - name: brett

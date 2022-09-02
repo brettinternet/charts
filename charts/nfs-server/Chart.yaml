@@ -6,9 +6,9 @@ name: nfs-server
 version: 0.1.1
 kubeVersion: ">=1.16.0-0"
 keywords: []
-home: https://github.com/brettinternet/charts/tree/master/charts/nfs-server
+home: https://github.com/brettinternet/charts/tree/main/charts/nfs-server
 sources:
-  - https://github.com/brettinternet/charts/tree/master/charts/nfs-server
+  - https://github.com/brettinternet/charts/tree/main/charts/nfs-server
   - https://hub.docker.com/r/erichough/nfs-server/
 maintainers:
   - name: brett

@@ -6,9 +6,9 @@ name: miniflux
 version: 0.1.0
 kubeVersion: ">=1.16.0-0"
 keywords: []
-home: https://github.com/brettinternet/charts/tree/master/charts/miniflux
+home: https://github.com/brettinternet/charts/tree/main/charts/miniflux
 sources:
-  - https://github.com/brettinternet/charts/tree/master/charts/miniflux
+  - https://github.com/brettinternet/charts/tree/main/charts/miniflux
   - https://hub.docker.com/r/miniflux/miniflux
 maintainers:
   - name: brett
