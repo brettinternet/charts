@@ -1,36 +1,36 @@
 # Extends https://github.com/bjw-s/helm-charts/blob/13c511dc13e1f31c1ccfd81f67aafd369c86e1a0/charts/library/common/values.yaml
 ---
 image:
-  repository: docker.io/erichough/nfs-server
+  repository: docker.io/itsthenetwork/nfs-server-alpine
   tag: latest
   pullPolicy: IfNotPresent
 
 env:
   TZ: UTC
-  # Define exports here or in `/etc/exports` volume
-  # NFS_EXPORT_0: /data
-  # NFS_EXPORT_1: /some/container/path
+  SHARED_DIRECTORY: /data
 
 service:
   main:
     ports:
       http:
         port: 2049
+  udp-111:
+    enabled: true
+    ports:
+      udp-111:
+        enabled: true
+        port: 111
+        protocol: UDP
+        targetPort: 111
 
 ingress:
   main:
     enabled: false
 
 persistence:
-  # Use config or use "env: {}" to define exports
-  config:
-    enabled: false
-    mountPath: /etc/exports
-    readOnly: true
-
   # Define any data path in container for NFS content
   data:
-    enabled: false
+    enabled: true
     mountPath: /data
     # See https://kubernetes.io/docs/concepts/storage/volumes/#hostpath
     # type: hostPath
@@ -42,25 +42,7 @@ securityContext:
   privileged: false
   # Or add capability here:
   # capabilities:
-  #   add: ["SYS_ADMIN"]
-
-podSecurityContext: {}
-  # runAsUser: 568
-  # runAsGroup: 568
-  # fsGroup: 568
-
-resources: {}
-  # requests:
-  #   # Hardware acceleration using an Intel iGPU w/ QuickSync and
-  #   # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
-  #   gpu.intel.com/i915: 1
-  #   cpu: 200m
-  #   memory: 256Mi
-  # limits:
-  #   # Hardware acceleration using an Intel iGPU w/ QuickSync and
-  #   # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
-  #   gpu.intel.com/i915: 1
-  #   memory: 4096Mi
+  #   add: ["SYS_ADMIN", "SETPCAP"]
 
 # Pod constraints for a specific node
 # See https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
