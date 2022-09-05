@@ -11,17 +11,10 @@ env:
 
 service:
   main:
+    enabled: true
     ports:
       http:
         port: 2049
-  udp-111:
-    enabled: true
-    ports:
-      udp-111:
-        enabled: true
-        port: 111
-        protocol: UDP
-        targetPort: 111
 
 ingress:
   main:
