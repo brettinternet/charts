@@ -6,15 +6,15 @@ image:
   pullPolicy: IfNotPresent
 
 env:
-  TZ: UTC
-    # See https://pkg.go.dev/github.com/lib/pq#hdr-Connection_String_Parameters
-  DATABASE_URL: postgres://user:password@podname.namespace/miniflux?sslmode=disable
-  RUN_MIGRATIONS: "1"
-  CREATE_ADMIN: "1"
+  # TZ: UTC
+  # See https://pkg.go.dev/github.com/lib/pq#hdr-Connection_String_Parameters
+  # DATABASE_URL: postgres://user:password@podname.namespace/miniflux?sslmode=disable
+  # RUN_MIGRATIONS: "1"
+  # CREATE_ADMIN: "1"
   # When `CREATE_ADMIN` is enabled.
-  ADMIN_USERNAME: admin
+  # ADMIN_USERNAME: admin
   # When `CREATE_ADMIN` is enabled
-  ADMIN_PASSWORD: ""
+  # ADMIN_PASSWORD: ""
 
 service:
   main:
